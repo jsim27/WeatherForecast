@@ -2,21 +2,10 @@
 //  CurrentWeather.swift
 //  WeatherForecast
 //
-//  Created by Jae-hoon Sim on 2022/04/05.
+//  Created by Jae-hoon Sim on 2022/04/06.
 //
 
 import Foundation
-
-// MARK: - CurrentWeather
-struct CurrentWeatherResponse: Codable {
-    let weather: [Weather]
-    let detailInfo: Weather.DetailInfo
-
-    enum CodingKeys: String, CodingKey {
-        case weather
-        case detailInfo = "main"
-    }
-}
 
 struct CurrentWeather {
     let temp: Double
