@@ -24,6 +24,7 @@ struct CurrentWeather {
     let tempMin: Double
     let tempMax: Double
     let description: String
+    let iconID: String
 }
 
 extension CurrentWeather {
@@ -32,9 +33,10 @@ extension CurrentWeather {
         self.feelsLike = response.detailInfo.feelsLike
         self.tempMin = response.detailInfo.tempMin
         self.tempMax = response.detailInfo.tempMax
-        guard let description = response.weather.first?.weatherDescription else {
+        guard let weather = response.weather.first else {
             return nil
         }
-        self.description = description
+        self.description = weather.weatherDescription
+        self.iconID = weather.icon
     }
 }
